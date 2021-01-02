@@ -2,49 +2,38 @@ import json
 import os
 import config
 
-
 directory = config.DIRECTORY
 entries = config.entries
 directory_path = config.directory_path
 
-
 for entry in entries:
-    
-    
-    myJsonFile = open(directory+'/'+entry, 'r')
+    myJsonFile = open(directory + "/" + entry, 'r', )
     myJsonData = myJsonFile.read()
     obj = json.loads(myJsonData)
     print(str(obj['abi']))
-    #json_formated_str = json.dumps(obj['abi'], indent=2)
-    #print(json_formated_str)
-    
-    #print(1)
+    json_formated_str = json.dumps(obj['abi'], indent=2)
+    myJsonFile = open(directory + "/" + entry, 'w')
 
-else: 
-    print("Success")
+    myJsonFile.write(str(json_formated_str))
 
-
-#myJsonFile = open('jsonfiles/SmartTimelock.json', 'r')
+# myJsonFile = open('jsonfiles/SmartTimelock.json', 'r')
 # myJsonFiles = open(myJsonDirectory, 'r')
 
-#myJsonData = myJsonFile.read()
+# myJsonData = myJsonFile.read()
 # myJsonDataAll = myJsonFiles.read()
 
 # objs = json.loads(myJsonDataAll)
 
-#obj = json.loads(myJsonData)
+# obj = json.loads(myJsonData)
 
 
-#json_formated_str = json.dumps(obj['abi'], indent=2)
+# json_formated_str = json.dumps(obj['abi'], indent=2)
 
 # print(str(obj['abi'])) for debugging
 
 
-#print(json_formated_str)
+# print(json_formated_str)
 
-#myJsonFile = open('jsonfiles/SmartTimelock.json', 'w')
+# myJsonFile = open('jsonfiles/SmartTimelock.json', 'w')
 
-#myJsonFile.write(str(json_formated_str))
-
-
-
+# myJsonFile.write(str(json_formated_str))
